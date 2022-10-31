@@ -2,6 +2,6 @@ package ordenacao;
 
 import java.util.List;
 
-public interface Ordenador<T> {
-    public List<T> ordena(List<T> lista);
+public interface Ordenador {
+    public List<Integer> ordena(List<Integer> lista);
 }
