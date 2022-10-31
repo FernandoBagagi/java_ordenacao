@@ -8,17 +8,17 @@ public class BubbleSort<T> implements Ordenador {
 
     @Override
     public List<Integer> ordena(List<Integer> lista) {
-        lista = new LinkedList<Integer>(lista);
-        for (int i = 0; i < lista.size(); i++) {
+        for (int i = 0; i < lista.size() - 1; i++) {
             for (int j = 0; j < lista.size() - 1; j++) {
-                if (lista.get(i) > lista.get(i + 1)) {
-                    Integer aux = lista.get(i);
-                    lista.set(i, lista.get(i + 1));
-                    lista.set(i + 1, aux);
+                if (lista.get(j) > lista.get(j + 1)) {
+                    Integer aux = lista.get(j);
+                    lista.set(j, lista.get(j + 1));
+                    lista.set(j + 1, aux);
+                    System.out.println(lista);
                 }
             }
         }
-        return new ArrayList<Integer>(lista);
+        return lista;
     }
 
 }
