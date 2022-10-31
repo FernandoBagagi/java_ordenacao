@@ -20,6 +20,6 @@ public class App {
 
         System.out.println("Antes da ordenação: " + numeros);
         Ordenador ordenador = new BubbleSort<>();
-        System.out.println("Após a ordenação: " + ordenador.ordena(numeros));
+        System.out.println("Após a ordenação:   " + ordenador.ordena(numeros));
     }
 }
