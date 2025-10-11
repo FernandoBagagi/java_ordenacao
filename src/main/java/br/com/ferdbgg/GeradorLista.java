@@ -59,4 +59,9 @@ public class GeradorLista<T> {
         return novoObjeto;
 
     }
+
+    public List<T> getLista() {
+        return List.copyOf(this.lista);
+    }
+    
 }
