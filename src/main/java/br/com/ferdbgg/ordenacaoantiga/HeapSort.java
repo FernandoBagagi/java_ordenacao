@@ -1,8 +1,8 @@
-package ordenacao;
+package br.com.ferdbgg.ordenacaoantiga;
 
 import java.util.List;
 
-public class BucketSort implements Ordenador{
+public class HeapSort implements Ordenador{
 
     @Override
     public List<Integer> ordena(List<Integer> lista) {

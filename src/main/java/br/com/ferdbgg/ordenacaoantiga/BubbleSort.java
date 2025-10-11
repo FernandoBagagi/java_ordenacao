@@ -1,4 +1,4 @@
-package ordenacao;
+package br.com.ferdbgg.ordenacaoantiga;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

@@ -1,11 +1,10 @@
+package br.com.ferdbgg.ordenacaoantiga;
 import java.util.ArrayList;
 import java.util.List;
 
-import ordenacao.BubbleSort;
-import ordenacao.Ordenador;
 
 public class App {
-    public static void main(String[] args) {
+    public static void mainAntiga(String[] args) {
 
         /*
          int quantidade = 10000;
