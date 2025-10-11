@@ -2,6 +2,9 @@ package br.com.ferdbgg;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        //TODO: Criar listas de testes
+        //TODO: Criar ordenadores que serão testados
+        //TODO: Executar os testes
+        //TODO: Gerar relatótio
     }
 }
