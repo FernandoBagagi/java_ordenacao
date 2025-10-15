@@ -36,24 +36,24 @@ public class GeradorLista<T> {
 
     }
 
-    private T gerarNovoObjeto(final boolean permiteRepeticao, final int numeroMaximoDeTentativas) {
+    private T gerarNovoObjeto(final boolean permiteRepeticao, final int numeroMaximoDeTentativas)
+            throws IllegalStateException {
 
         if (permiteRepeticao) {
             return geradorObjeto.gerarObjeto();
         }
-        
+
         T novoObjeto;
-        boolean atingiuLimiteTentativas;
-        int tentativa = 1;
-        
+        int tentativas = 0;
+
         do {
             novoObjeto = geradorObjeto.gerarObjeto();
-            atingiuLimiteTentativas = tentativa <= numeroMaximoDeTentativas;
-            tentativa += 1;
-        } while (lista.contains(novoObjeto) && !atingiuLimiteTentativas);
+            tentativas += 1;
+        } while (lista.contains(novoObjeto) && tentativas < numeroMaximoDeTentativas);
 
-        if (atingiuLimiteTentativas) {
-            // TODO: Lançar exceção
+        if (tentativas >= numeroMaximoDeTentativas) {
+            throw new IllegalStateException(
+                    "Não foi possível gerar um novo objeto único após " + numeroMaximoDeTentativas + " tentativas");
         }
 
         return novoObjeto;
@@ -63,5 +63,5 @@ public class GeradorLista<T> {
     public List<T> getLista() {
         return List.copyOf(this.lista);
     }
-    
+
 }

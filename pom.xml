@@ -19,10 +19,11 @@
   </properties>
 
   <dependencies>
+    <!-- Use JUnit Jupiter (JUnit 5) for tests on Java 21 -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.10.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -69,5 +70,21 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <!-- Activate surefire and compiler plugin with the versions locked in pluginManagement -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <release>21</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <!-- Ensure junit-platform (JUnit 5) is used by surefire -->
+          <useModulePath>false</useModulePath>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
