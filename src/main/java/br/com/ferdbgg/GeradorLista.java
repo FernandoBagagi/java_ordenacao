@@ -1,6 +1,7 @@
 package br.com.ferdbgg;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class GeradorLista<T> {
@@ -61,7 +62,7 @@ public class GeradorLista<T> {
     }
 
     public List<T> getLista() {
-        return List.copyOf(this.lista);
+        return new LinkedList<>(this.lista);
     }
 
 }
