@@ -33,8 +33,7 @@ public class InsertionSort<T extends Comparable<? super T>> extends Ordenador<T>
             }
 
             lista.set(j + 1, chave);
-            
-            if (j + 1 != i) super.incrementarTrocas();
+            super.incrementarTrocas();
         
         }
 
