@@ -8,7 +8,7 @@ public class App {
 
         final GeradorObjeto<Integer> geradorObjeto = new GeradorIntegerAleatorio();
         final GeradorLista<Integer> geradorLista = new GeradorLista<>(geradorObjeto);
-        geradorLista.gerarNovaLista(10, false, 5);
+        geradorLista.gerarNovaLista(1000, false, 5);
 
         //System.out.println(geradorLista.getLista());
 
@@ -22,6 +22,7 @@ public class App {
         ordenadores.add(new MergeSort<>(geradorLista.getLista()));
         ordenadores.add(new HeapSort<>(geradorLista.getLista()));
         ordenadores.add(new TimSort<>(geradorLista.getLista()));
+        ordenadores.add(new JavaSort<>(geradorLista.getLista()));
 
         // Executa os testes e gera relatótio
         final Relatorio relatorio = new RelatorioTerminal();
