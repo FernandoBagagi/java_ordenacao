@@ -53,14 +53,14 @@ public class QuickSort<T extends Comparable<? super T>> extends Ordenador<T> {
 
     @Override
     public String getNome() {
-        return "QuickSort";
+        return "Quick Sort";
     }
 
     @Override
     public String getDescricao() {
         return """
                 Funcionamento: Divide e conquista usando um pivô
-                Complexidade: O(n log n) médio, O(n²) pior caso
+                Complexidade: O(n²) no pior caso, O(n log n) no melhor caso
                 Uso: Um dos mais rápidos na prática
                 """;
     }
