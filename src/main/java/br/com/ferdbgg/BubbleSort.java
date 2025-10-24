@@ -27,10 +27,9 @@ public class BubbleSort<T extends Comparable<? super T>> extends Ordenador<T> {
 
                 if (super.comparar(lista.get(j), lista.get(j + 1)) > 0) {
 
-                    final T aux = lista.get(j);
+                    T aux = lista.get(j);
                     lista.set(j, lista.get(j + 1));
                     lista.set(j + 1, aux);
-
                     super.incrementarTrocas();
 
                 }
@@ -40,7 +39,7 @@ public class BubbleSort<T extends Comparable<? super T>> extends Ordenador<T> {
 
     @Override
     public String getNome() {
-        return "BubbleSort";
+        return "Bubble Sort";
     }
 
     @Override
