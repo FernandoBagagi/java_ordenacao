@@ -18,76 +18,37 @@ public class QuickSort<T extends Comparable<? super T>> extends Ordenador<T> {
 
     @Override
     protected void ordenar() {
-        quickSort2(0, super.lista.size() - 1);
+        quickSort(0, super.lista.size() - 1);
     }
 
-    /*
-     * private void quickSort(int inicio, int fim) {
-     * if (inicio < fim) {
-     * int indicePivo = particionar(inicio, fim);
-     * quickSort(inicio, indicePivo - 1);
-     * quickSort(indicePivo + 1, fim);
-     * }
-     * }
-     * 
-     * private int particionar(int inicio, int fim) {
-     * T pivo = lista.get(fim);
-     * int i = inicio - 1;
-     * 
-     * for (int j = inicio; j < fim; j++) {
-     * if (super.comparar(lista.get(j), pivo) <= 0) {
-     * i++;
-     * T aux = lista.get(i);
-     * lista.set(i, lista.get(j));
-     * lista.set(j, aux);
-     * super.incrementarTrocas();
-     * }
-     * }
-     * 
-     * T aux = lista.get(i + 1);
-     * lista.set(i + 1, lista.get(fim));
-     * lista.set(fim, aux);
-     * super.incrementarTrocas();
-     * 
-     * return i + 1;
-     * }
-     */
-
-    private void quickSort2(int inicio, int fim) {
+    private void quickSort(int inicio, int fim) {
         if (inicio < fim) {
-            int posicaoPivo = separar(inicio, fim);
-            quickSort2(inicio, posicaoPivo - 1);
-            quickSort2(posicaoPivo + 1, fim);
+            int indicePivo = particionar(inicio, fim);
+            quickSort(inicio, indicePivo - 1);
+            quickSort(indicePivo + 1, fim);
         }
     }
 
-    private int separar(int inicio, int fim) {
-        
-        T pivo = lista.get(inicio);
-        int i = inicio + 1;
-        int f = fim;
+    private int particionar(int inicio, int fim) {
+        T pivo = lista.get(fim);
+        int i = inicio - 1;
 
-        while (i <= f) {
-            if (super.comparar(lista.get(i), pivo) <= 0) {
+        for (int j = inicio; j < fim; j++) {
+            if (super.comparar(lista.get(j), pivo) <= 0) {
                 i++;
-            } else if (super.comparar(pivo, lista.get(f)) < 0) {
-                f--;
-            } else {
                 T aux = lista.get(i);
-                lista.set(i, lista.get(f));
-                lista.set(f, aux);
+                lista.set(i, lista.get(j));
+                lista.set(j, aux);
                 super.incrementarTrocas();
-                i++;
-                f--;
             }
         }
 
-        lista.set(inicio, lista.get(f));
-        lista.set(f, pivo);
+        T aux = lista.get(i + 1);
+        lista.set(i + 1, lista.get(fim));
+        lista.set(fim, aux);
         super.incrementarTrocas();
-        
-        return f;
 
+        return i + 1;
     }
 
     @Override
