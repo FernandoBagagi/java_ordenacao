@@ -1,35 +1,28 @@
 package br.com.ferdbgg;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 public class App {
     public static void main(String[] args) {
 
         final GeradorObjeto<Integer> geradorObjeto = new GeradorIntegerAleatorio();
-        final GeradorLista<Integer> geradorLista = new GeradorLista<>(geradorObjeto);
+        final var geradorLista = new GeradorLista<>(geradorObjeto);
         geradorLista.gerarNovaLista(1000, false, 5);
 
-        //System.out.println(geradorLista.getLista());
+        final var ordenadores = Arrays.asList(
+                new BubbleSort<>(geradorLista.getLista()),
+                new SelectionSort<>(geradorLista.getLista()),
+                new InsertionSort<>(geradorLista.getLista()),
+                new QuickSort<>(geradorLista.getLista()),
+                new MergeSort<>(geradorLista.getLista()),
+                new HeapSort<>(geradorLista.getLista()),
+                new TimSort<>(geradorLista.getLista()),
+                new JavaSort<>(geradorLista.getLista()));
 
-        List<Ordenador<Integer>> ordenadores = new ArrayList<>();
-
-        // Cria ordenadores que serão testados
-        ordenadores.add(new BubbleSort<>(geradorLista.getLista()));
-        ordenadores.add(new SelectionSort<>(geradorLista.getLista()));
-        ordenadores.add(new InsertionSort<>(geradorLista.getLista()));
-        ordenadores.add(new QuickSort<>(geradorLista.getLista()));
-        ordenadores.add(new MergeSort<>(geradorLista.getLista()));
-        ordenadores.add(new HeapSort<>(geradorLista.getLista()));
-        ordenadores.add(new TimSort<>(geradorLista.getLista()));
-        ordenadores.add(new JavaSort<>(geradorLista.getLista()));
-
-        // Executa os testes e gera relatótio
         final Relatorio relatorio = new RelatorioTerminal();
 
         ordenadores.stream()
                 .map(Ordenador::testar)
-                //.map(Ordenador::getLista).forEach(System.out::println);
                 .map(Ordenador::gerarEstatisticas)
                 .sorted()
                 .forEach(relatorio::adicionarEstatistica);
