@@ -1,3 +1,7 @@
+## Referências
+- https://www.freecodecamp.org/portuguese/news/algoritmos-de-ordenacao-explicados-com-exemplos-em-python-java-e-c/
+- https://www.devmedia.com.br/algoritmos-de-ordenacao-em-java/32693
+
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
