@@ -21,6 +21,7 @@ public class App {
         ordenadores.add(new QuickSort<>(geradorLista.getLista()));
         ordenadores.add(new MergeSort<>(geradorLista.getLista()));
         ordenadores.add(new HeapSort<>(geradorLista.getLista()));
+        ordenadores.add(new TimSort<>(geradorLista.getLista()));
 
         // Executa os testes e gera relatótio
         final Relatorio relatorio = new RelatorioTerminal();
