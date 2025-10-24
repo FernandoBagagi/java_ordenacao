@@ -41,7 +41,7 @@ public class InsertionSort<T extends Comparable<? super T>> extends Ordenador<T>
 
     @Override
     public String getNome() {
-        return "InsertionSort";
+        return "Insertion Sort";
     }
 
     @Override
