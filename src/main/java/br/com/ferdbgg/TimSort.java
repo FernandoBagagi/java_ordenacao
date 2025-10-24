@@ -26,7 +26,7 @@ public class TimSort<T extends Comparable<? super T>> extends Ordenador<T> {
 
         // Se o array é muito pequeno, usa Insertion Sort direto
         if (tamanhoLista < MIN_MERGE) {
-            insertionSort(0, tamanhoLista);
+            insertionSort(0, tamanhoLista - 1);
             return;
         }
 
