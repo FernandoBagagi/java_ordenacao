@@ -59,9 +59,9 @@ public class QuickSort<T extends Comparable<? super T>> extends Ordenador<T> {
     @Override
     public String getDescricao() {
         return """
-                Funcionamento: Compara elementos adjacentes e os troca se estiverem na ordem errada
-                Complexidade: O(n²) no pior caso, O(n) no melhor caso
-                Uso: Educacional, não recomendado para produção
+                Funcionamento: Divide e conquista usando um pivô
+                Complexidade: O(n log n) médio, O(n²) pior caso
+                Uso: Um dos mais rápidos na prática
                 """;
     }
 
