@@ -33,7 +33,7 @@ public class SelectionSort<T extends Comparable<? super T>> extends Ordenador<T>
 
             if (indiceMinimo != i) {
 
-                final T aux = lista.get(i);
+                T aux = lista.get(i);
                 lista.set(i, lista.get(indiceMinimo));
                 lista.set(indiceMinimo, aux);
 
@@ -47,7 +47,7 @@ public class SelectionSort<T extends Comparable<? super T>> extends Ordenador<T>
 
     @Override
     public String getNome() {
-        return "SelectionSort";
+        return "Selection Sort";
     }
 
     @Override
